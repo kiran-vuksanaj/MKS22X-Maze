@@ -6,6 +6,13 @@ public class Maze{
     while(sca.hasNext()) System.out.println(sca.nextLine());
   }
   public static Scanner getScanner(String fileName){
-    return null;
+    try{
+      File f = new File(fileName);
+      return new Scanner(f);
+    }
+    catch(FileNotFoundException e){
+      System.out.println("file error: "+fileName+" not found");
+      return null;
+    }
   }
 }

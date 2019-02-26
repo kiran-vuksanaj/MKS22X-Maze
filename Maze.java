@@ -15,4 +15,13 @@ public class Maze{
       return null;
     }
   }
+  public static char[][] getMap(Scanner sca){
+    ArrayList<String> lines = new ArrayList<String>();
+    while(sca.hasNextLine()) lines.add(sca.nextLine());
+    char[][] out = new char[lines.size()][];
+    for(int i=0;i<out.length;i++){
+      out[i] = lines.get(i).toCharArray();
+    }
+    return out;
+  }
 }

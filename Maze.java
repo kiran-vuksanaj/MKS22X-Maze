@@ -31,12 +31,15 @@ public class Maze{
     return out;
   }
 
-  public static void solve(char[][] map){
-    int[] startCoords = findChar(map,'S');
-    int[] endCoords = findChar(map,'E');
-    solver(startCoords[0],startCoords[1],endCoords[0],endCoords[1]);
-  }
-  private static void solver(int curR,int curC,int endR,int endC){
-    
-  }
+    public static void solve(char[][] map){
+      int[] startCoords = findChar(map,'S');
+      int[] endCoords = findChar(map,'E');
+      solver(startCoords[0],startCoords[1],endCoords[0],endCoords[1]);
+    }
+    private static void solver(int curR,int curC,int endR,int endC){
+
+    }
+    private static int[] findChar(char[][] map, char c){
+      return null;
+    }
 }

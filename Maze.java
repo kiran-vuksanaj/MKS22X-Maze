@@ -1,9 +1,15 @@
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 public class Maze{
   public static void main(String[] args){
     Scanner sca = getScanner("Maze1.txt");
-    while(sca.hasNext()) System.out.println(sca.nextLine());
+    //PRINT LINES, DO NOTHING MORE
+    //while(sca.hasNext()) System.out.println(sca.nextLine());
+    //GENERATE 2D ARRAY, PRINT
+    char[][] map = getMap(sca);
+    for(int i=0;i<map.length;i++){
+      System.out.println(Arrays.toString(map[i]));
+    }
   }
   public static Scanner getScanner(String fileName){
     try{
@@ -23,5 +29,14 @@ public class Maze{
       out[i] = lines.get(i).toCharArray();
     }
     return out;
+  }
+
+  public static void solve(char[][] map){
+    int[] startCoords = findChar(map,'S');
+    int[] endCoords = findChar(map,'E');
+    solver(startCoords[0],startCoords[1],endCoords[0],endCoords[1]);
+  }
+  private static void solver(int curR,int curC,int endR,int endC){
+    
   }
 }

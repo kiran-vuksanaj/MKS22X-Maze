@@ -43,9 +43,17 @@ public class Maze{
       return out;
     }
     private boolean mapIsValid(){
-      return false;
+      boolean foundE,foundS;
+      for(int i=0;i<map.length;i++){
+        for(int j=0;j<map.length;j++){
+          if(map[i][j] == 'E' && foundE) return false;
+          if(map[i][j] == 'S' && foundS) return false;
+          foundE = foundE || map[i][j] =='E';
+          foundS = foundS || map[i][j] == 'S';
+        }
+      }
     }
-    
+
 
 
     private void wait(int millis){

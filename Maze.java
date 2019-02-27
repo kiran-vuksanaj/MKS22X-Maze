@@ -25,8 +25,27 @@ public class Maze{
     */
 
     public Maze(String filename) throws FileNotFoundException{
-        //COMPLETE CONSTRUCTOR
+      Scanner sca = getScanner(filename);
+      maze = getMap(sca);
+      if(!(mapIsValid())) throw new IllegalStateException("missing or too many starts and ends");
     }
+    private static Scanner getScanner(String filename)throws FileNotFoundException{
+      File f = new File(filename);
+      return new Scanner(f);
+    }
+    public static char[][] getMap(Scanner sca){
+      ArrayList<String> lines = new ArrayList<String>();
+      while(sca.hasNextLine()) lines.add(sca.nextLine());
+      char[][] out = new char[lines.size()][];
+      for(int i=0;i<out.length;i++){
+        out[i] = lines.get(i).toCharArray();
+      }
+      return out;
+    }
+    private boolean mapIsValid(){
+      return false;
+    }
+    
 
 
     private void wait(int millis){

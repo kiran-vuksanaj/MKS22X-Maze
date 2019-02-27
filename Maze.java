@@ -40,6 +40,14 @@ public class Maze{
 
     }
     private static int[] findChar(char[][] map, char c){
+      for(int i=0;i<map.length;i++){
+        for(int j=0;j<map[i].length;j++){
+          if(map[i][j] == c){
+            int[] out = {i,j};
+            return out;
+          }
+        }
+      }
       return null;
     }
 }

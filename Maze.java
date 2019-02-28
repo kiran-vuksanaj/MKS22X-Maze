@@ -2,7 +2,11 @@ import java.util.*;
 import java.io.*;
 public class Maze{
 
-
+    private static int[][] moveStatic = {{1,0}, //down
+                                         {0,1}, //right
+                                         {-1,0},//up
+                                         {0,-1} //left
+                                       };
     private char[][]maze;
     private boolean animate;//false by default
 
@@ -139,14 +143,21 @@ public class Maze{
         }
         else{
           //set char to @
-
+          maze[row][col] = '@';
           //recurse down each of the four directions
           //(if any succeed, return their value +1)
-
+          for(int i=0;i<4;i++){
+            int nextR = row + moveStatic[i][0];
+            int nextC = col + moveStatic[i][1];
+            int val = solve(nextR,nextC);
+            if(val != -1){
+              return 1 + val;
+            }
+          }
           //if all return -1, set char to . and return -1
+          maze[row][col] = '.';
+          return -1;
         }
-
-        return -1; //so it compiles
     }
 
     public String toString(){

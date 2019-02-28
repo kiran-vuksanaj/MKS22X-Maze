@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class Maze{
+public class FileAccess{
   public static void main(String[] args){
     Scanner sca = getScanner("Maze1.txt");
     //PRINT LINES, DO NOTHING MORE
@@ -40,14 +40,6 @@ public class Maze{
 
     }
     private static int[] findChar(char[][] map, char c){
-      for(int i=0;i<map.length;i++){
-        for(int j=0;j<map[i].length;j++){
-          if(map[i][j] == c){
-            int[] out = {i,j};
-            return out;
-          }
-        }
-      }
       return null;
     }
 }

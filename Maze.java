@@ -100,7 +100,7 @@ public class Maze{
       int[] startCoords = findChar('S');
 
             //erase the S
-      maze[ startCoords[0] ][ startCoords[1] ] = '@';
+      maze[ startCoords[0] ][ startCoords[1] ] = ' ';
 
             //and start solving at the location of the s.
 
@@ -132,14 +132,17 @@ public class Maze{
         if(animate){
 
             clearTerminal();
+            char save = maze[row][col];
+            maze[row][col] = '\u2588';
             System.out.println(this);
-
+            maze[row][col] = save;
             wait(20);
         }
         //WHEN ITS A WALL: just stop
         if(maze[row][col] == '#' || maze[row][col] == '@' || maze[row][col] == '.'){
+          //System.out.println("wall");
           return -1;
-        }
+        }//else System.out.println("not wall");
 
         //BASE CASE: current location is E
         if(maze[row][col] == 'E'){

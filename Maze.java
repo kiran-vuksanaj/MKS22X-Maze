@@ -91,18 +91,17 @@ public class Maze{
 
     */
     public int solve(){
-      return -1;
 
             //find the location of the S.
-
+      int[] startCoords = findChar('S');
 
             //erase the S
-
+      maze[ startCoords[0] ][ startCoords[1] ] = '@';
 
             //and start solving at the location of the s.
 
             //return solve(???,???);
-
+      return solve(startCoords[0] , startCoords[1]);
     }
 
     /*
@@ -148,5 +147,17 @@ public class Maze{
         out += '\n';
       }
       return out;
+    }
+
+    private int[] findChar(char c){
+      for(int i=0;i<maze.length;i++){
+        for(int j=0;j<maze[i].length;j++){
+          if(maze[i][j] == c){
+            int[] out = {i,j};
+            return out;
+          }
+        }
+      }
+      return null;
     }
 }

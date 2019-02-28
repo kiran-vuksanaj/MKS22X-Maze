@@ -139,5 +139,14 @@ public class Maze{
         return -1; //so it compiles
     }
 
-
+    public String toString(){
+      String out = "";
+      for(char[] row:maze){
+        for(char c:row){
+          out += c;
+        }
+        out += '\n';
+      }
+      return out;
+    }
 }

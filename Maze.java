@@ -136,6 +136,10 @@ public class Maze{
 
             wait(20);
         }
+        //WHEN ITS A WALL: just stop
+        if(maze[row][col] == '#' || maze[row][col] == '@' || maze[row][col] == '.'){
+          return -1;
+        }
 
         //BASE CASE: current location is E
         if(maze[row][col] == 'E'){

@@ -137,6 +137,14 @@ public class Maze{
         if(maze[row][col] == 'E'){
           return 1;
         }
+        else{
+          //set char to @
+
+          //recurse down each of the four directions
+          //(if any succeed, return their value +1)
+
+          //if all return -1, set char to . and return -1
+        }
 
         return -1; //so it compiles
     }

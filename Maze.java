@@ -43,9 +43,19 @@ public class Maze{
       return out;
     }
     private boolean mapIsValid(){
-      return false;
+      boolean foundE = false;
+      boolean foundS = false;
+      for(int i=0;i<maze.length;i++){
+        for(int j=0;j<maze[i].length;j++){
+          if(foundE && maze[i][j] == 'E') return false;
+          if(foundS && maze[i][j] == 'S') return false;
+          foundE = foundE || maze[i][j]=='E';
+          foundS = foundS || maze[i][j]=='S';
+        }
+      }
+      return foundE && foundS;
     }
-    
+
 
 
     private void wait(int millis){
@@ -81,6 +91,7 @@ public class Maze{
 
     */
     public int solve(){
+      return -1;
 
             //find the location of the S.
 

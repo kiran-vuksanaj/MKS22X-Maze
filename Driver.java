@@ -13,4 +13,10 @@ public class Driver{
         System.out.println("Invalid filename: "+filename);
       }
     }
+    private static boolean contains(String[] L,String term){
+      for(String s : L){
+        if(term.equals(s)) return true;
+      }
+      return false;
+    }
 }

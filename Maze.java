@@ -146,7 +146,7 @@ public class Maze{
 
         //BASE CASE: current location is E
         if(maze[row][col] == 'E'){
-          return 1;
+          return 0;
         }
         else{
           //set char to @
